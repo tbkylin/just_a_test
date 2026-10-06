@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101b17" />
+    <title>贪吃蛇 · 绿野巡游</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark" aria-hidden="true">●</span> 绿野巡游 <span class="brand-sub">/ SNAKE</span></div>
+        <span class="topbar-note">一口一口，刷新纪录。</span>
+      </header>
+
+      <section class="game-layout" aria-label="贪吃蛇游戏">
+        <div class="game-column">
+          <div class="game-heading">
+            <div>
+              <p class="eyebrow">经典街机游戏</p>
+              <h1>贪吃蛇<span class="title-dot">.</span></h1>
+            </div>
+            <span class="status" id="status">等待开始</span>
+          </div>
+
+          <div class="board-shell" id="board-shell">
+            <canvas id="game" width="600" height="600" aria-label="贪吃蛇游戏画布"></canvas>
+            <div class="game-overlay" id="overlay">
+              <div class="overlay-card">
+                <span class="overlay-icon" id="overlay-icon" aria-hidden="true">✦</span>
+                <h2 id="overlay-title">准备好出发了吗？</h2>
+                <p id="overlay-text">吃下果实，避开墙壁和自己的身体。</p>
+                <button class="primary-button" id="overlay-button" type="button">开始游戏 <span aria-hidden="true">↗</span></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mobile-controls" aria-label="方向控制">
+            <button type="button" data-direction="up" class="control-up" aria-label="向上">↑</button>
+            <button type="button" data-direction="left" class="control-left" aria-label="向左">←</button>
+            <button type="button" data-direction="down" class="control-down" aria-label="向下">↓</button>
+            <button type="button" data-direction="right" class="control-right" aria-label="向右">→</button>
+          </div>
+        </div>
+
+        <aside class="sidebar">
+          <div class="side-intro"><span class="side-sparkle" aria-hidden="true">✳</span><p>追逐下一颗果实，<br />也追逐下一个高分。</p></div>
+          <div class="score-grid">
+            <div class="score-card"><span>本局得分</span><strong id="score">00</strong></div>
+            <div class="score-card"><span>最高纪录</span><strong id="best-score">00</strong></div>
+          </div>
+          <div class="level-card"><div><span>当前等级</span><strong id="level">01</strong></div><div class="level-track"><div id="level-progress"></div></div><small>每吃 5 颗果实提升速度</small></div>
+          <div class="sidebar-actions">
+            <button id="pause-button" type="button" disabled>暂停游戏 <span>SPACE</span></button>
+            <button id="restart-button" type="button">重新开始 <span>R</span></button>
+          </div>
+          <div class="instructions"><h2>操作指南 <span>HOW TO PLAY</span></h2><p><kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd> 或 <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> 控制方向</p><p><kbd>SPACE</kbd> 暂停 / 继续，<kbd>R</kbd> 重新开始</p><p>手机上可滑动棋盘，或使用下方方向键。</p></div>
+        </aside>
+      </section>
+      <footer>保持专注，享受每一次转弯。 <span>© 绿野巡游</span></footer>
+    </main>
+  </body>
+</html>
